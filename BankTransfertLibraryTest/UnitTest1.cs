@@ -1,4 +1,5 @@
 using BankTranfertLibrary;
+using BankTransfertLibrarySolid;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 namespace BankTransfertLibraryTest
@@ -22,7 +23,7 @@ namespace BankTransfertLibraryTest
         [TestMethod]
         public void TestMethod2()
         {
-            var bankTransfert = new BankTransfert();
+            var bankTransfert = new BankTransfertSolid();
             bankTransfert.Transfert(1, 12.2m, "4514561", "8546129856");
         }
 
@@ -30,7 +31,7 @@ namespace BankTransfertLibraryTest
         [TestMethod]
         public void TestMethod3()
         {
-            var bankTransfert = new BankTransfert();
+            var bankTransfert = new BankTransfertSolid();
             bankTransfert.Transfert(1, -1000, "4514561", "8546129856");
         }
 
@@ -38,7 +39,7 @@ namespace BankTransfertLibraryTest
         [TestMethod]
         public void TestMethod4()
         {
-            var bankTransfert = new BankTransfert();
+            var bankTransfert = new BankTransfertSolid();
             bankTransfert.Transfert(1111, -152021, "rpzeoizprt", "'à(_\"'(lfpaz");
         }
         #endregion

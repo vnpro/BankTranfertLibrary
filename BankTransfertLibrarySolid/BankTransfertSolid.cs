@@ -49,24 +49,8 @@ namespace BankTransfertLibrarySolid
                 throw new InvalidOperationException();
             }
 
-            //write csv
-            var csv = new StringBuilder();
-            // chemin : BankTranfertLibrary\BankTransfertLibraryTest\bin\Debug\netcoreapp2.0
-            var csvTitle = $"transaction_{DateTime.Now.ToString("dd_MM_yy")}.csv";
-
-            if (!File.Exists(csvTitle))
-            {
-                using (StreamWriter sw = File.CreateText(csvTitle))
-                {
-                    sw.WriteLine("Transaction;Amount;From;To");
-                }
-            }
-
-            var line = $"{transactionId};{amount};{fromBankIban};{toBankIban}";
-            using (StreamWriter sw = File.AppendText(csvTitle))
-            {
-                sw.WriteLine(line);
-            }
+            FileWriter fw = new CsvWriter($"transaction_{DateTime.Now.ToString("dd_MM_yy")}.csv");
+            fw.Write($"{transactionId};{amount};{fromBankIban};{toBankIban}");
             
             return true;
         }
