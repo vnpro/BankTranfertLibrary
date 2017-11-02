@@ -14,6 +14,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\BankTranfertLibrary\BankTranfertLibrary.csproj" />
+    <ProjectReference Include="..\BankTransfertLibrarySolid\BankTransfertLibrarySolid.csproj" />
   </ItemGroup>
 
 </Project>

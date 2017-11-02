@@ -17,7 +17,7 @@ namespace BankTransfertLibrarySolid
 
     public class Logger : ILogger
     {
-        public virtual void Log(Severity severity, string message) { };
+        public virtual void Log(Severity severity, string message) { }
     }
 
     public class ConsoleLogger : Logger
