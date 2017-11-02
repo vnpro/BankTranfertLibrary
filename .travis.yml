@@ -1,0 +1,14 @@
+language: csharp
+solution: BankTransfertLibrary.sln
+mono: none
+dotnet: 2.0.0
+dist: trusty
+script:
+- dotnet restore
+- dotnet test ./BankTransfertLibraryTest/BankTransfertLibraryTest.csproj
+- cd ./BankTransfertLibrary/
+- dotnet build -c Release
+- dotnet publish -c Release -o ./BankTransfertLibrary/publish
+deploy:
+on:
+ tags: true
